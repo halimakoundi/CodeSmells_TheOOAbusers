@@ -3,7 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwitchStatements", "SwitchStatements\SwitchStatements.csproj", "{269B5FDD-6BBC-46E8-86A4-D05ECE5F7099}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwitchStatements.Tests", "SwitchStatements.Tests\SwitchStatements.Tests\SwitchStatements.Tests.csproj", "{133327FE-12ED-4232-98EB-D9957F21F8AE}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{269B5FDD-6BBC-46E8-86A4-D05ECE5F7099}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{269B5FDD-6BBC-46E8-86A4-D05ECE5F7099}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{269B5FDD-6BBC-46E8-86A4-D05ECE5F7099}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{269B5FDD-6BBC-46E8-86A4-D05ECE5F7099}.Release|Any CPU.Build.0 = Release|Any CPU
+		{133327FE-12ED-4232-98EB-D9957F21F8AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{133327FE-12ED-4232-98EB-D9957F21F8AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{133327FE-12ED-4232-98EB-D9957F21F8AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{133327FE-12ED-4232-98EB-D9957F21F8AE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
