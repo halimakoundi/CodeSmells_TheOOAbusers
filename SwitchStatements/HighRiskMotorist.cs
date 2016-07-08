@@ -1,10 +1,16 @@
+using System;
+
 namespace SwitchStatements
 {
-    public class HighRiskMotorist
+    public class HighRiskMotorist:Motorist
     {
         public static double GetHighRiskPremium(double insuranceValue)
         {
             return insuranceValue * 0.06;
+        }
+
+        public HighRiskMotorist(DateTime dateOfBirth, int pointsOnLicense) : base(dateOfBirth, pointsOnLicense)
+        {
         }
     }
 }
