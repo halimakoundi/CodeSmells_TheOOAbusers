@@ -6,7 +6,7 @@ namespace SwitchStatements
 
         public InsuranceQuote(Motorist motorist)
         {
-            this.motorist = MotoristFactory.MotoristWithAgeAndPoints(motorist.Age, motorist.PointsOnLicense);
+            this.motorist = motorist;
         }
 
         public Motorist Motorist => motorist;

@@ -6,19 +6,19 @@ namespace SwitchStatements
     {
         private const int HighRiskAgeTheshold = 25;
 
-        public static Motorist MotoristWithAgeAndPoints(int motoristAge, int pointsOnLicense)
+        public static Motorist MotoristWithAgeAndPoints(int pointsOnLicense, DateTime dateOfBirth)
         {
             Motorist motorist;
-            motorist = new LowRiskMotorist(DateTime.Now.AddYears(-motoristAge),
+            motorist = new LowRiskMotorist(dateOfBirth,
                 pointsOnLicense);
-            if (HasTooManyPoints(pointsOnLicense) || IsMotoristMature(motoristAge))
+            if (HasTooManyPoints(pointsOnLicense) || IsMotoristMature(motorist.Age))
             {
-                motorist = new HighRiskMotorist(DateTime.Now.AddYears(-motoristAge),
+                motorist = new HighRiskMotorist(dateOfBirth,
                     pointsOnLicense);
             }
             else if (pointsOnLicense > 0)
             {
-                motorist = new ModerateRiskMotorist(DateTime.Now.AddYears(-motoristAge),
+                motorist = new ModerateRiskMotorist(dateOfBirth,
                         pointsOnLicense);
             }
             return motorist;

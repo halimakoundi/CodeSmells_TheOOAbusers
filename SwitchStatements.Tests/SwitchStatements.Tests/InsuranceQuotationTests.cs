@@ -14,7 +14,7 @@ namespace SwitchStatements.Tests
 
         private InsuranceQuote buildInsuranceQuoteForMotorist(string dateOfBirth, int pointsOnLicense)
         {
-            return new InsuranceQuote(new Motorist(parseDate(dateOfBirth), pointsOnLicense));
+            return new InsuranceQuote(MotoristFactory.MotoristWithAgeAndPoints(pointsOnLicense, parseDate(dateOfBirth)));
         }
 
         private DateTime parseDate(string dateOfBirth)
