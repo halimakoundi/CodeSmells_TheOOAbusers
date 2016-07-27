@@ -31,5 +31,10 @@ namespace ParallelInheritance.Src
         {
             ExecuteTransaction(-amount);
         }
+
+        public void Credit(float amount)
+        {
+            ExecuteTransaction(amount);
+        }
     }
 }

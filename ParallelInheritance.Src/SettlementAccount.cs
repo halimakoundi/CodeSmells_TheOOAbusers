@@ -9,11 +9,6 @@ namespace ParallelInheritance.Src
 
         public Transaction LastTransaction => (Transaction)transactions[transactions.Count - 1];
 
-        public void Credit(float amount)
-        {
-            ExecuteTransaction(amount);
-        }
-
         public void Borrow(float amount)
         {
             owing += amount;
