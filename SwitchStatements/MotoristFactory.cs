@@ -4,9 +4,12 @@ namespace SwitchStatements
 {
     public class MotoristFactory
     {
-        public static Motorist MotoristWithAgeAndPoints(Motorist motorist)
+        private const int HighRiskAgeTheshold = 25;
+
+        public static Motorist MotoristWithAgeAndPoints(Motorist motorist, int motoristAge, int
+             pointsOnLicense)
         {
-            if (motorist.PointsOnLicense > 3 || motorist.Age < 25)
+            if (HasTooManyPoints(pointsOnLicense) || IsMotoristMature(motoristAge))
             {
                 motorist = new HighRiskMotorist(DateTime.Now.AddYears(-motorist.Age),
                     motorist.PointsOnLicense);
@@ -23,6 +26,16 @@ namespace SwitchStatements
             }
 
             return motorist;
+        }
+
+        private static bool HasTooManyPoints(int motoristPointsOnLicense)
+        {
+            return motoristPointsOnLicense > 3;
+        }
+
+        private static bool IsMotoristMature(int motoristAge)
+        {
+            return motoristAge < HighRiskAgeTheshold;
         }
     }
 }
