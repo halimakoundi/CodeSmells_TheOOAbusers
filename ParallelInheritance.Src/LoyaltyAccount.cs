@@ -17,10 +17,5 @@ namespace ParallelInheritance.Src
             ExecuteTransaction(amount);
             loyaltyPoints++;
         }
-
-        public void Debit(float amount)
-        {
-            ExecuteTransaction(-amount);
-        }
     }
 }

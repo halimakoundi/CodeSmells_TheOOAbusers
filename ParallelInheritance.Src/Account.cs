@@ -26,5 +26,10 @@ namespace ParallelInheritance.Src
             var now = DateTime.Now;
             this.LastTransactionDate = now.Date + "/" + now.Month + "/" + now.Year;
         }
+
+        public void Debit(float amount)
+        {
+            ExecuteTransaction(-amount);
+        }
     }
 }

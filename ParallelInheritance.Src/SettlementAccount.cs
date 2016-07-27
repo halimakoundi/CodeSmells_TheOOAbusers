@@ -14,11 +14,6 @@ namespace ParallelInheritance.Src
             ExecuteTransaction(amount);
         }
 
-        public void Debit(float amount)
-        {
-            ExecuteTransaction(-amount);
-        }
-
         public void Borrow(float amount)
         {
             owing += amount;
