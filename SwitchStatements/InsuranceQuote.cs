@@ -13,7 +13,7 @@ namespace SwitchStatements
 
         public double CalculateInsurancePremium(double insuranceValue)
         {
-            motorist = MotoristFactory.MotoristWithAgeAndPoints(motorist, motorist.Age, motorist.PointsOnLicense);
+            motorist = MotoristFactory.MotoristWithAgeAndPoints(motorist.Age, motorist.PointsOnLicense);
             return motorist.GetRiskPremium(insuranceValue);
         }
     }
