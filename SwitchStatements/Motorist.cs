@@ -48,5 +48,10 @@ namespace SwitchStatements
 
             return RiskFactor.LOW_RISK;
         }
+
+        public virtual double GetRiskPremium(double insuranceValue)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

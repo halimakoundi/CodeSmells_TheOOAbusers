@@ -4,7 +4,7 @@ namespace SwitchStatements
 {
     public class InsuranceQuote
     {
-        private readonly Motorist motorist;
+        private  Motorist motorist;
 
         public InsuranceQuote(Motorist motorist)
         {
@@ -20,8 +20,8 @@ namespace SwitchStatements
             switch (riskFactor)
             {
                 case RiskFactor.LOW_RISK:
-                    var riskTypeMotorist = new LowRiskMotorist(DateTime.Now.AddYears(-motorist.Age), motorist.PointsOnLicense);
-                    return riskTypeMotorist.GetRiskPremium(insuranceValue);
+                    motorist = new LowRiskMotorist(DateTime.Now.AddYears(-motorist.Age), motorist.PointsOnLicense);
+                    return motorist.GetRiskPremium(insuranceValue);
                 case RiskFactor.MODERATE_RISK:
                     return ModerateRiskMotorist.GetRiskPremium(insuranceValue);
                 default:
