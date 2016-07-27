@@ -52,6 +52,7 @@
     <Compile Include="LowRiskMotorist.cs" />
     <Compile Include="ModerateRiskMotorist.cs" />
     <Compile Include="Motorist.cs" />
+    <Compile Include="MotoristFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RiskFactor.cs" />
   </ItemGroup>
