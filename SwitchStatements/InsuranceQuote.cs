@@ -15,24 +15,29 @@ namespace SwitchStatements
 
         public double CalculateInsurancePremium(double insuranceValue)
         {
+            MotoristWithAgeAndPoints();
+            return motorist.GetRiskPremium(insuranceValue);
+        }
+
+        private void MotoristWithAgeAndPoints()
+        {
             var riskFactor = motorist.CalculateMotoristRisk();
 
             switch (riskFactor)
             {
                 case RiskFactor.LOW_RISK:
                     motorist = new LowRiskMotorist(DateTime.Now.AddYears(-motorist.Age),
-                                                    motorist.PointsOnLicense);
+                        motorist.PointsOnLicense);
                     break;
                 case RiskFactor.MODERATE_RISK:
                     motorist = new ModerateRiskMotorist(DateTime.Now.AddYears(-motorist.Age),
-                                                        motorist.PointsOnLicense);
+                        motorist.PointsOnLicense);
                     break;
                 default:
                     motorist = new HighRiskMotorist(DateTime.Now.AddYears(-motorist.Age),
-                                                        motorist.PointsOnLicense);
+                        motorist.PointsOnLicense);
                     break;
             }
-            return motorist.GetRiskPremium(insuranceValue);
         }
     }
 }
