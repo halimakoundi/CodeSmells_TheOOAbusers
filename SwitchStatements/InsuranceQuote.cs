@@ -6,14 +6,13 @@ namespace SwitchStatements
 
         public InsuranceQuote(Motorist motorist)
         {
-            this.motorist = motorist;
+            this.motorist = MotoristFactory.MotoristWithAgeAndPoints(motorist.Age, motorist.PointsOnLicense);
         }
 
         public Motorist Motorist => motorist;
 
         public double CalculateInsurancePremium(double insuranceValue)
         {
-            motorist = MotoristFactory.MotoristWithAgeAndPoints(motorist.Age, motorist.PointsOnLicense);
             return motorist.GetRiskPremium(insuranceValue);
         }
     }
