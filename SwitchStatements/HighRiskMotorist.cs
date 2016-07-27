@@ -4,7 +4,7 @@ namespace SwitchStatements
 {
     public class HighRiskMotorist:Motorist
     {
-        public static double GetHighRiskPremium(double insuranceValue)
+        public static double GetRiskPremium(double insuranceValue)
         {
             return insuranceValue * 0.06;
         }

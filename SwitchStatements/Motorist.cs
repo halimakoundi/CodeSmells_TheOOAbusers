@@ -12,7 +12,7 @@ namespace SwitchStatements
             this.dateOfBirth = dateOfBirth;
         }
 
-        public int PointsOnLicense { get; private set; }
+        public int PointsOnLicense { get; }
 
         public int Age
         {

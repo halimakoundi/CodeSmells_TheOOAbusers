@@ -9,10 +9,7 @@ namespace SwitchStatements
             this.motorist = motorist;
         }
 
-        public Motorist Motorist
-        {
-            get { return motorist; }
-        }
+        public Motorist Motorist => motorist;
 
         public double CalculateInsurancePremium(double insuranceValue)
         {
@@ -21,11 +18,11 @@ namespace SwitchStatements
             switch (riskFactor)
             {
                 case RiskFactor.LOW_RISK:
-                    return LowRiskMotorist.GetLowRiskPremium(insuranceValue);
+                    return LowRiskMotorist.GetRiskPremium(insuranceValue);
                 case RiskFactor.MODERATE_RISK:
-                    return ModerateRiskMotorist.GetModerateRiskPremium(insuranceValue);
+                    return ModerateRiskMotorist.GetRiskPremium(insuranceValue);
                 default:
-                    return HighRiskMotorist.GetHighRiskPremium(insuranceValue);
+                    return HighRiskMotorist.GetRiskPremium(insuranceValue);
             }
         }
     }
