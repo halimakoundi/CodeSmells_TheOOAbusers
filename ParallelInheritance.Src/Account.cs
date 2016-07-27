@@ -5,20 +5,20 @@ namespace ParallelInheritance.Src
 {
     public class Account
     {
-        protected readonly IList transactions = new ArrayList();
+        protected readonly IList Transactions = new ArrayList();
         public float Balance { get; set; }
         public string LastTransactionDate { get; private set; }
 
         protected void ExecuteTransaction(float amount)
         {
-            this.Balance += amount;
+            Balance += amount;
             RecordTransaction(amount);
             UpdateLastTransactionDate();
         }
 
         private void RecordTransaction(float amount)
         {
-            transactions.Add(new Transaction(true, amount));
+            Transactions.Add(new Transaction(true, amount));
         }
 
         private void UpdateLastTransactionDate()
@@ -32,7 +32,7 @@ namespace ParallelInheritance.Src
             ExecuteTransaction(-amount);
         }
 
-        public void Credit(float amount)
+        public virtual void Credit(float amount)
         {
             ExecuteTransaction(amount);
         }

@@ -5,18 +5,18 @@ namespace ParallelInheritance.Src
 {
     public class SettlementAccount : Account
     {
-        private float owing;
+        private float _owing;
 
-        public Transaction LastTransaction => (Transaction)transactions[transactions.Count - 1];
+        public Transaction LastTransaction => (Transaction)Transactions[Transactions.Count - 1];
 
         public void Borrow(float amount)
         {
-            owing += amount;
+            _owing += amount;
         }
 
         public void Settle()
         {
-            this.Balance -= owing;
+            this.Balance -= _owing;
         }
     }
 }
