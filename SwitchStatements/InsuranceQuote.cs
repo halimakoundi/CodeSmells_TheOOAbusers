@@ -22,14 +22,17 @@ namespace SwitchStatements
                 case RiskFactor.LOW_RISK:
                     motorist = new LowRiskMotorist(DateTime.Now.AddYears(-motorist.Age),
                                                     motorist.PointsOnLicense);
-                    return motorist.GetRiskPremium(insuranceValue);
+                    break;
                 case RiskFactor.MODERATE_RISK:
                     motorist = new ModerateRiskMotorist(DateTime.Now.AddYears(-motorist.Age),
                                                         motorist.PointsOnLicense);
-                    return motorist.GetRiskPremium(insuranceValue);
+                    break;
                 default:
-                    return HighRiskMotorist.GetRiskPremium(insuranceValue);
+                    motorist = new HighRiskMotorist(DateTime.Now.AddYears(-motorist.Age),
+                                                        motorist.PointsOnLicense);
+                    break;
             }
+            return motorist.GetRiskPremium(insuranceValue);
         }
     }
 }
