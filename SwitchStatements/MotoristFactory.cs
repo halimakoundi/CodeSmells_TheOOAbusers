@@ -6,23 +6,22 @@ namespace SwitchStatements
     {
         public static Motorist MotoristWithAgeAndPoints(Motorist motorist)
         {
-            var riskFactor = motorist.CalculateMotoristRisk();
-
-            switch (riskFactor)
+            if (motorist.PointsOnLicense > 3 || motorist.Age < 25)
             {
-                case RiskFactor.LOW_RISK:
-                    motorist = new LowRiskMotorist(DateTime.Now.AddYears(-motorist.Age),
-                        motorist.PointsOnLicense);
-                    break;
-                case RiskFactor.MODERATE_RISK:
-                    motorist = new ModerateRiskMotorist(DateTime.Now.AddYears(-motorist.Age),
-                        motorist.PointsOnLicense);
-                    break;
-                default:
-                    motorist = new HighRiskMotorist(DateTime.Now.AddYears(-motorist.Age),
-                        motorist.PointsOnLicense);
-                    break;
+                motorist = new HighRiskMotorist(DateTime.Now.AddYears(-motorist.Age),
+                    motorist.PointsOnLicense);
             }
+            else if (motorist.PointsOnLicense > 0)
+            {
+                motorist = new ModerateRiskMotorist(DateTime.Now.AddYears(-motorist.Age),
+                        motorist.PointsOnLicense);
+            }
+            else
+            {
+                motorist = new LowRiskMotorist(DateTime.Now.AddYears(-motorist.Age),
+                        motorist.PointsOnLicense);
+            }
+
             return motorist;
         }
     }

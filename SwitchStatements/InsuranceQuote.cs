@@ -1,5 +1,3 @@
-using System;
-
 namespace SwitchStatements
 {
     public class InsuranceQuote
